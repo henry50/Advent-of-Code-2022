@@ -16,8 +16,7 @@ stack run -- -i custom.txt 12 1
 ```
 The `--makefiles` option creates the initial 25 files in `src` and should not be used after setup.
 
-
-## Completion Calendar 🌟
+## Completion Calendar ⭐
 | Mon | Tue | Wed | Thu | Fri | Sat | Sun |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |     |     |     | Day 01 <br> ❌❌ | Day 02 <br> ❌❌| Day 03 <br> ❌❌ | Day 04 <br> ❌❌ |
