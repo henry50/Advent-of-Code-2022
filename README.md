@@ -1,7 +1,7 @@
 # Advent of Code 2022
 Advent of Code 2022 solutions in Haskell.
 
-# Completion Calendar 🌟
+# Completion Calendar ⭐
 | Mon | Tue | Wed | Thu | Fri | Sat | Sun |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |     |     |     | Day 01 <br> ❌❌ | Day 02 <br> ❌❌| Day 03 <br> ❌❌ | Day 04 <br> ❌❌ |
