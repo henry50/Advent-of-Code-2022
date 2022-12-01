@@ -1,3 +1,9 @@
 module Day15 (runDay15) where
 
-runDay15 = error "Not implemented"
+import Part ( Part(..) )
+
+
+runDay15 :: Part -> [String] -> [String]
+runDay15 p = case p of
+  One -> error "Not implemented"
+  Two -> error "Not implemented"

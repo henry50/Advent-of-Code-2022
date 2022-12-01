@@ -48,7 +48,7 @@ import Day23 (runDay23)
 import Day24 (runDay24)
 import Day25 (runDay25)
 
-import Part
+import Part ( Part(..) )
 
 days :: [Part -> [String] -> [String]]
 days = [runDay00, runDay01, runDay02, runDay03, runDay04, runDay05, runDay06, runDay07, runDay08, runDay09, runDay10, runDay11, runDay12, runDay13, runDay14, runDay15, runDay16, runDay17, runDay18, runDay19, runDay20, runDay21, runDay22, runDay23, runDay24, runDay25]
@@ -116,5 +116,6 @@ makeDays :: IO ()
 makeDays = do
     mapM_ mkFile [1..25] where
         mkFile :: Int -> IO ()
-        mkFile n = writeFile ("src/Day" ++ d ++ ".hs") ("module Day" ++ d ++ " (runDay" ++ d ++ ") where\n\nrunDay" ++ d ++ " = error \"Not implemented\"\n") where
+        mkFile n = writeFile ("src/Day" ++ d ++ ".hs") ("module Day" ++ d ++ " (runDay" ++ d ++ ") where\n\nimport Part ( Part(..) )\n\n\nrunDay" ++ d ++ " :: Part -> [String] -> [String]\nrunDay" ++ d ++ " p = case p of\n  One -> error \"Not implemented\"\n  Two -> error \"Not implemented\"\n") where
             d = padDayNumber n
+
