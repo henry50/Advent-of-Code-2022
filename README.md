@@ -1,7 +1,23 @@
 # Advent of Code 2022
 Advent of Code 2022 solutions in Haskell.
 
-# Completion Calendar 🌟
+## Usage
+```
+stack run -- [-i|--input FILE] [--makefiles] DAY PART
+```
+By default, `data/daynn.txt` is used as the input where `nn` is the day number.
+To run the second part of day 5, for example, use
+```
+stack run 5 2
+```
+To run the first part of day 12 with a custom input file, use
+```
+stack run -- -i custom.txt 12 1
+```
+The `--makefiles` option creates the initial 25 files in `src` and should not be used after setup.
+
+
+## Completion Calendar 🌟
 | Mon | Tue | Wed | Thu | Fri | Sat | Sun |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |     |     |     | Day 01 <br> ❌❌ | Day 02 <br> ❌❌| Day 03 <br> ❌❌ | Day 04 <br> ❌❌ |
