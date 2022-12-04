@@ -58,6 +58,7 @@ library
   build-depends:
       base >=4.7 && <5
     , optparse-applicative
+    , split
   default-language: Haskell2010
 
 executable aoc22-exe
@@ -71,6 +72,7 @@ executable aoc22-exe
       aoc22
     , base >=4.7 && <5
     , optparse-applicative
+    , split
   default-language: Haskell2010
 
 test-suite aoc22-test
@@ -85,4 +87,5 @@ test-suite aoc22-test
       aoc22
     , base >=4.7 && <5
     , optparse-applicative
+    , split
   default-language: Haskell2010
