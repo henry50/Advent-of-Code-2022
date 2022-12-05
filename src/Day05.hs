@@ -5,6 +5,7 @@ import Data.List (transpose)
 import Data.Sequence as S (fromList, Seq (Empty), take, drop, index, update, (><), lookup, reverse)
 import Data.Foldable (Foldable(toList))
 import Data.Maybe (fromMaybe)
+import Data.Function ((&))
 
 
 runDay05 :: Part -> [String] -> [String]
@@ -21,7 +22,7 @@ solve stacks moves modifier = toList $ getHeads finalStacks where
   getHeads :: Seq(Seq Char) -> String
   getHeads l = toList $ fromMaybe Empty $ mapM (S.lookup 0) l
   finalStacks :: Seq(Seq Char)
-  finalStacks = foldl (\x y -> y x) stacks moveAppliers
+  finalStacks = foldl (&) stacks moveAppliers
   moveAppliers :: Seq(Seq (Seq Char) -> Seq (Seq Char))
   moveAppliers = applyMove <$> fromList moves
   applyMove :: (Int, Int, Int) -> Seq (Seq Char) -> Seq (Seq Char)
