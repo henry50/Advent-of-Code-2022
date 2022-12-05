@@ -1,8 +1,6 @@
 module Day05 (runDay05) where
 
 import Part ( Part(..) )
---import Data.List.Split (splitOn)
---import Data.List.Split (splitOn)
 import Data.List (transpose)
 import Data.Sequence as S (fromList, Seq (Empty), take, drop, index, update, (><), lookup, reverse)
 import Data.Foldable (Foldable(toList))
