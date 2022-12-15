@@ -1,4 +1,3 @@
-{-# LANGUAGE InstanceSigs #-}
 module Day11 (runDay11) where
 
 import Part ( Part(..) )
@@ -21,9 +20,9 @@ data Monkey = Monkey {
 
 runDay11 :: Part -> [String] -> [String]
 runDay11 p s = case p of
-  One -> [show $ solve 20 (`div` 3) s']
-  Two -> [show $ solve 10000 id s']
-  where s' = parseInput s
+  One -> [show $ solve 20 (`div` 3) commonDiv s']
+  Two -> [show $ solve 10000 id commonDiv s']
+  where s' = parseInput s; commonDiv = product $ map testDiv $ M.elems s'
 
 parseInput :: [String] -> Map Int Monkey
 parseInput x = M.fromList $ zip [0..length x - 1] $ parseInput' x where
@@ -44,11 +43,9 @@ parseInput x = M.fromList $ zip [0..length x - 1] $ parseInput' x where
     inspectCount = 0
   }
   parseMonkey _ = error "Monkey does not match expected format"
---
-solve :: Int -> (Integer -> Integer) -> Map Int Monkey -> Integer
-solve rounds worryOp mapping =  product . take 2 . sortOn negate . map inspectCount . M.elems . (!! rounds) . iterate doRound $ mapping where
-  commonDiv :: Integer
-  commonDiv = product $ map testDiv $ M.elems mapping
+
+solve :: Int -> (Integer -> Integer) -> Integer -> Map Int Monkey -> Integer
+solve rounds worryOp commonDiv =  product . take 2 . sortOn negate . map inspectCount . M.elems . (!! rounds) . iterate doRound where
   doRound :: Map Int Monkey -> Map Int Monkey
   doRound ms = foldl (flip doTurn) ms (M.keys ms)
   doTurn :: Int -> Map Int Monkey -> Map Int Monkey
